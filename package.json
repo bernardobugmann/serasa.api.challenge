@@ -1,0 +1,19 @@
+{
+  "name": "projects_and_tasks",
+  "version": "0.0.1",
+  "description": "The first challenge from RocketSeat Bootcamp. Use this app to create projects and tasks for those projects.",
+  "main": "index.js",
+  "repository": "https://github.com/bernardobugmann/rocketseat.bootcamp.challenge01.git",
+  "author": "Bernardo Bugmann <bernardo_bugmann@protonmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "prod": "node index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

@@ -1,0 +1,264 @@
+_type: export
+__export_format: 4
+__export_date: 2020-01-06T03:52:53.623Z
+__export_source: insomnia.desktop.app:v7.0.6
+resources:
+  - _id: req_5af4a265b20c4053a23c771004f6ee30
+    authentication: {}
+    body: {}
+    created: 1577344583717
+    description: Essa rota é um GET para listar todos os projetos já cadastrados. Não é
+      necessário informar nenhum parâmetro para ela ser executada.
+    headers: []
+    isPrivate: false
+    metaSortKey: -1577344393456
+    method: GET
+    modified: 1578279531372
+    name: List projects
+    parameters: []
+    parentId: fld_17f7fbf4663842f1b148bdf2e8b5133f
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: "{{host}}/projects"
+    _type: request
+  - _id: fld_17f7fbf4663842f1b148bdf2e8b5133f
+    created: 1577383029870
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1577383029870
+    modified: 1577383029870
+    name: Projects
+    parentId: fld_4bf7ff6cfee6466f93ceda9fd1c076c7
+    _type: request_group
+  - _id: fld_4bf7ff6cfee6466f93ceda9fd1c076c7
+    created: 1577344380681
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1577344380681
+    modified: 1577344380681
+    name: SerasaConsumidor
+    parentId: wrk_c0d7ebddce094e2b93acc1c34c84b232
+    _type: request_group
+  - _id: wrk_c0d7ebddce094e2b93acc1c34c84b232
+    created: 1577344344986
+    description: ""
+    modified: 1577344344986
+    name: serasaconsumidor.api.challenge
+    parentId: null
+    _type: workspace
+  - _id: req_c0b9b7c533a54cb988b1f0fe60cc2631
+    authentication: {}
+    body:
+      mimeType: application/json
+      text: |-
+        { 
+        	"id": :id,
+        	"title": "project name"
+        }
+    created: 1577344393406
+    description: >-
+      Para fazer a criação de um novo projeto você vai precisar passar um `ID`
+      único inteiro e um `title` para o projeto.
+
+      Você deve passar um body em `JSON` assim:
+
+      ```JSON
+
+      {
+        id: PROJECT_ID,
+        "title": "PROJECT_TITLE"
+      }
+
+      ```
+    headers:
+      - id: pair_80bc3fe4b8234668b6d30e2503d578cb
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1577344393443.5
+    method: POST
+    modified: 1578282098233
+    name: New project
+    parameters: []
+    parentId: fld_17f7fbf4663842f1b148bdf2e8b5133f
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: "{{host}}/projects"
+    _type: request
+  - _id: req_1e18e4c8eff640ed9a1e81ad32a14339
+    authentication: {}
+    body:
+      mimeType: application/json
+      text: |-
+        { 
+        	"title": "new project name"
+        }
+    created: 1577344725003
+    description: >-
+      Para atualizar um projeto, primeiramente você deve passar o ID do projeto
+      na URL de requisição. Ficando desta forma:
+
+      ```JSON
+        http://localhost:3000/projects/ID_DO_PROJETO
+      ```
+
+      Lembrando que só deve funcionar com um projeto existente.
+
+      Envie uma requisição com o body `JSON` com as seguintes informações:
+
+      ```JSON
+
+      { 
+      	"title": "NEW_PROJECT_TITLE"
+      }
+
+      ```
+    headers:
+      - id: pair_80bc3fe4b8234668b6d30e2503d578cb
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1577344393431
+    method: PUT
+    modified: 1578282106524
+    name: Update project
+    parameters: []
+    parentId: fld_17f7fbf4663842f1b148bdf2e8b5133f
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: "{{host}}/projects/:id"
+    _type: request
+  - _id: req_fb65f606207442658268fe88f5d28420
+    authentication: {}
+    body: {}
+    created: 1577380375791
+    description: >-
+      Para deletar um projeto, você deve passar o ID do projeto na URL de
+      requisição. Ficando desta forma:
+
+      ```JSON
+        http://localhost:3000/projects/ID_DO_PROJETO
+      ```
+
+      Lembrando que só deve funcionar com um projeto existente.
+
+      A resposta de sucesso da requisição não retornará um body, apenas o status.
+    headers: []
+    isPrivate: false
+    metaSortKey: -1577344393406
+    method: DELETE
+    modified: 1578282243663
+    name: Delete project
+    parameters: []
+    parentId: fld_17f7fbf4663842f1b148bdf2e8b5133f
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: "{{host}}/projects/:id"
+    _type: request
+  - _id: req_184fc39612284c10975554e34012c8a7
+    authentication: {}
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "new task"
+        }	
+    created: 1577383020362
+    description: >-
+      Para criar uma nova task, primeiramente você deve passar o ID do projeto
+      na URL de requisição. Ficando desta forma:
+
+      ```json
+        http://localhost:3000/projects/ID_DO_PROJETO/tasks
+      ```
+
+      Lembrando que só deve funcionar com um projeto existente.
+
+      Para definir o nome da tarefa, crie um body em formato `JSON` com a tag name:
+
+      ```json
+
+      {
+        "name": "TASK NAME"
+      }
+
+      ```
+    headers:
+      - id: pair_907efbbe9d1d4d4983abd2ab6d6e7880
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1577344393306
+    method: POST
+    modified: 1578279441867
+    name: Create new task
+    parameters: []
+    parentId: fld_1f647ba5ff824c92b94c34e0bddf2f70
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: "{{host}}/projects/:id/tasks"
+    _type: request
+  - _id: fld_1f647ba5ff824c92b94c34e0bddf2f70
+    created: 1577383078835
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1577344393356
+    modified: 1577383084037
+    name: Tasks
+    parentId: fld_17f7fbf4663842f1b148bdf2e8b5133f
+    _type: request_group
+  - _id: env_60bacb4031aedf00ddd8679286b721310c13c884
+    color: null
+    created: 1577344345286
+    data: {}
+    dataPropertyOrder: null
+    isPrivate: false
+    metaSortKey: 1577344345286
+    modified: 1577344345286
+    name: Base Environment
+    parentId: wrk_c0d7ebddce094e2b93acc1c34c84b232
+    _type: environment
+  - _id: jar_60bacb4031aedf00ddd8679286b721310c13c884
+    cookies: []
+    created: 1577344345288
+    modified: 1577344345288
+    name: Default Jar
+    parentId: wrk_c0d7ebddce094e2b93acc1c34c84b232
+    _type: cookie_jar
+  - _id: env_370938bd691d409e9d696a7f1a4f1313
+    color: null
+    created: 1577344349950
+    data:
+      host: http://localhost:3000
+    dataPropertyOrder:
+      "&":
+        - host
+    isPrivate: false
+    metaSortKey: 1577344349950
+    modified: 1577344367171
+    name: local
+    parentId: env_60bacb4031aedf00ddd8679286b721310c13c884
+    _type: environment
